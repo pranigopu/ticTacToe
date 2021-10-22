@@ -1,8 +1,42 @@
-//THE GAME OF TIC TAC TOE
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "myArrayFunctions.h"
+
+//LINEAR SEARCH
+int linSearch(int N[], int searchSize, int searchVal)
+{
+    int i;
+    for(i =  0; i < searchSize; i++)
+    {
+        if(N[i] == searchVal) 
+        return i;
+    }
+    return -1;
+}
+
+//SELECTION SORT
+void selectSort(int A[] /* int *p */, int arraySize, int ascending1_descending0)
+{
+    int m;
+    int i, j;
+    for(i = 0; i < arraySize; i++)
+    {
+        m = i;
+        for(j = i; j < arraySize; j++)
+        {
+            //if((option)? (*(p + j) < *(p + m)) : (*(p + j) > *(p + m)))
+            if((ascending1_descending0)? (A[j] < A[m]) : (A[i] > A[m]))
+            m = j; 
+        }
+        /*
+        j = *(p + m);
+        *(p + m) = *(p + i);
+        *(p + i) = j;
+        */
+       j = A[m];
+       A[m] = A[i];
+       A[i] = j;
+    }
+}
 
 //FUNCTION TO MAKE A GRID FOR THE X's AND O's
 void grid(char B[])
@@ -126,10 +160,10 @@ int main()
                     move = MOVE[0] - 48;
                     j = linSearch(ALLMOVES, 9, LABEL[move - 1]);
                     j += linSearch(ALLMOVES, 9, LABEL[move - 1] * (-1));
-                    if(j > -1)
-                    printf("\nHey! Position %d has been filled.\n\n", move); 
+                    if(j > -2)
+                        printf("\nHey! Position %d has been filled.\n\n", move); 
                     else
-                    j = 0;              
+                        j = 0;              
                 }
                 else if(MOVE[0] == 'x')
                 {
