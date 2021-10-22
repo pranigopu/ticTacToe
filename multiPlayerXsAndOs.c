@@ -1,4 +1,4 @@
-//THE GAME OF NOUGHTS AND CROSSES
+//THE GAME OF TIC TAC TOE
 
 #include <stdio.h>
 #include <stdlib.h>
