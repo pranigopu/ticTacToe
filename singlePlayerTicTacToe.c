@@ -1,4 +1,4 @@
-#include "singlePlayerXsAndOs.h"  
+#include "singlePlayerTicTacToe.h"  
 void referrencegrid() 
 {
     char A[10] = "123456789";
