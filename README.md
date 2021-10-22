@@ -1,4 +1,4 @@
-# X's and O's (tic-tac-toe)
+# Tic tac toe
 
 This is my implementation of the well-known game, tic-tac-toe. I have implemented both singleplayer and multiplayer variants.
 
